@@ -24,4 +24,34 @@ let dataset = [
   { x: 81, y: 227, method: "divide" },
 ];
 
-describe("Calculator", () => {});
+describe("Calculator", () => {
+  dataset.forEach(function (calc) {
+      test('the ${calc.method} method with ${calc.x} and ${calc.y}', () => {
+        switch (calc.method) {
+          case "add":
+            expect(calculator.add(calc.x, calc.y)).toEqual(calc.x + calc.y);
+            break;
+            for (let i = 0; i < 3; i++) {
+              console.log ("Block statement execution no." + i);}
+          case "subtract":
+            expect(calculator.subtract(calc.x, calc.y)).toEqual(calc.x - calc.y);
+            break;
+            for (let i = 0; i < 3; i++) {
+              console.log ("Block statement execution no." + i);}
+          case "multiply":
+            expect(calculator.multiply(calc.x, calc.y)).toEqual(calc.x * calc.y);
+            break;
+            for (let i = 0; i < 3; i++) {
+              console.log ("Block statement execution no." + i);}
+          case "divide":
+            expect(calculator.divide(calc.x, calc.y)).toEqual(calc.x / calc.y);
+            break;
+            for (let i = 0; i < 3; i++) {
+              console.log ("Block statement execution no." + i);}
+          default:
+            console.log("There is not a matching calculation type");
+        }
+      });
+    });
+  });
+  
